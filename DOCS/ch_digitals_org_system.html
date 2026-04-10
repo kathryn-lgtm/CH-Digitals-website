@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CH Digitals — Agent System Org Chart</title>
+<style>
+  body {
+    margin: 0;
+    padding: 24px;
+    background: #f8f7f4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888780;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .t  { font-size: 14px; font-weight: 400; fill: #2C2C2A; }
+  .ts { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+  .th { font-size: 14px; font-weight: 500; fill: #2C2C2A; }
+  .box { fill: #F1EFE8; stroke: #B4B2A9; }
+  .arr { stroke: #888780; stroke-width: 1.5; fill: none; }
+  .node { cursor: pointer; }
+  .node:hover { opacity: 0.85; }
+
+  /* Color ramps */
+  .c-purple rect, .c-purple circle { fill: #EEEDFE; stroke: #534AB7; }
+  .c-purple .th { fill: #3C3489; }
+  .c-purple .ts { fill: #534AB7; }
+
+  .c-teal rect, .c-teal circle { fill: #E1F5EE; stroke: #0F6E56; }
+  .c-teal .th { fill: #085041; }
+  .c-teal .ts { fill: #0F6E56; }
+
+  .c-coral rect, .c-coral circle { fill: #FAECE7; stroke: #993C1D; }
+  .c-coral .th { fill: #712B13; }
+  .c-coral .ts { fill: #993C1D; }
+
+  .c-blue rect, .c-blue circle { fill: #E6F1FB; stroke: #185FA5; }
+  .c-blue .th { fill: #0C447C; }
+  .c-blue .ts { fill: #185FA5; }
+
+  .c-amber rect, .c-amber circle { fill: #FAEEDA; stroke: #854F0B; }
+  .c-amber .th { fill: #633806; }
+  .c-amber .ts { fill: #854F0B; }
+
+  .c-gray rect, .c-gray circle { fill: #F1EFE8; stroke: #888780; }
+  .c-gray .th { fill: #444441; }
+  .c-gray .ts { fill: #5F5E5A; }
+
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a18; }
+    h1 { color: #5F5E5A; }
+    .t  { fill: #D3D1C7; }
+    .ts { fill: #888780; }
+    .th { fill: #D3D1C7; }
+    .box { fill: #2C2C2A; stroke: #444441; }
+    .arr { stroke: #5F5E5A; }
+
+    .c-purple rect { fill: #26215C; stroke: #AFA9EC; }
+    .c-purple .th { fill: #CECBF6; }
+    .c-purple .ts { fill: #AFA9EC; }
+
+    .c-teal rect { fill: #04342C; stroke: #5DCAA5; }
+    .c-teal .th { fill: #9FE1CB; }
+    .c-teal .ts { fill: #5DCAA5; }
+
+    .c-coral rect { fill: #4A1B0C; stroke: #F0997B; }
+    .c-coral .th { fill: #F5C4B3; }
+    .c-coral .ts { fill: #F0997B; }
+
+    .c-blue rect { fill: #042C53; stroke: #85B7EB; }
+    .c-blue .th { fill: #B5D4F4; }
+    .c-blue .ts { fill: #85B7EB; }
+
+    .c-amber rect { fill: #412402; stroke: #EF9F27; }
+    .c-amber .th { fill: #FAC775; }
+    .c-amber .ts { fill: #EF9F27; }
+
+    .c-gray rect { fill: #2C2C2A; stroke: #5F5E5A; }
+    .c-gray .th { fill: #D3D1C7; }
+    .c-gray .ts { fill: #888780; }
+  }
+</style>
+</head>
+<body>
+<h1>CH Digitals — Agent System Org Chart · April 2026</h1>
+<svg width="100%" viewBox="0 0 680 820" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- KATHRYN -->
+<g class="node c-purple">
+  <rect x="220" y="20" width="240" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="340" y="43" text-anchor="middle" dominant-baseline="central">Kathryn</text>
+  <text class="ts" x="340" y="61" text-anchor="middle" dominant-baseline="central">Founder — decisions and approvals only</text>
+</g>
+
+<line x1="340" y1="76" x2="340" y2="92" stroke="#888780" stroke-width="1"/>
+<path d="M140 92 L540 92" fill="none" stroke="#888780" stroke-width="1"/>
+<line x1="140" y1="92" x2="140" y2="108" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="540" y1="92" x2="540" y2="108" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- CH Digitals -->
+<g class="node c-teal">
+  <rect x="40" y="108" width="200" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="140" y="131" text-anchor="middle" dominant-baseline="central">CH Digitals</text>
+  <text class="ts" x="140" y="149" text-anchor="middle" dominant-baseline="central">Agency + products</text>
+</g>
+
+<!-- TSH Media Group -->
+<g class="node c-coral">
+  <rect x="440" y="108" width="200" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="540" y="131" text-anchor="middle" dominant-baseline="central">TSH Media Group</text>
+  <text class="ts" x="540" y="149" text-anchor="middle" dominant-baseline="central">Community platform</text>
+</g>
+
+<line x1="140" y1="164" x2="140" y2="196" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Agent system header -->
+<g class="c-gray">
+  <rect x="20" y="196" width="440" height="36" rx="8" stroke-width="0.5"/>
+  <text class="th" x="240" y="219" text-anchor="middle" dominant-baseline="central">Website agent system — chdigitals.com.au</text>
+</g>
+
+<!-- Lines to agents -->
+<line x1="98"  y1="232" x2="98"  y2="252" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="266" y1="232" x2="266" y2="252" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="434" y1="232" x2="434" y2="252" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Researcher -->
+<g class="node c-blue">
+  <rect x="20" y="252" width="156" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="98" y="278" text-anchor="middle" dominant-baseline="central">Researcher</text>
+  <text class="ts" x="98" y="296" text-anchor="middle" dominant-baseline="central">SEO + competitor</text>
+  <text class="ts" x="98" y="311" text-anchor="middle" dominant-baseline="central">Monthly</text>
+</g>
+
+<!-- Marketing -->
+<g class="node c-blue">
+  <rect x="188" y="252" width="156" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="266" y="278" text-anchor="middle" dominant-baseline="central">Marketing</text>
+  <text class="ts" x="266" y="296" text-anchor="middle" dominant-baseline="central">Copy + CTAs</text>
+  <text class="ts" x="266" y="311" text-anchor="middle" dominant-baseline="central">Monthly</text>
+</g>
+
+<!-- Project Manager -->
+<g class="node c-blue">
+  <rect x="356" y="252" width="104" height="68" rx="8" stroke-width="0.5"/>
+  <text class="th" x="408" y="272" text-anchor="middle" dominant-baseline="central">Project</text>
+  <text class="th" x="408" y="289" text-anchor="middle" dominant-baseline="central">manager</text>
+  <text class="ts" x="408" y="307" text-anchor="middle" dominant-baseline="central">Tasks + backlog</text>
+  <text class="ts" x="408" y="322" text-anchor="middle" dominant-baseline="central">Weekly</text>
+</g>
+
+<!-- Dashed lines to Claude Code -->
+<line x1="98"  y1="320" x2="98"  y2="360" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 3"/>
+<line x1="266" y1="320" x2="266" y2="360" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 3"/>
+<line x1="408" y1="320" x2="408" y2="360" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 3"/>
+
+<!-- Claude Code -->
+<g class="node c-teal">
+  <rect x="20" y="360" width="440" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="240" y="383" text-anchor="middle" dominant-baseline="central">Claude Code — web designer + builder</text>
+  <text class="ts" x="240" y="401" text-anchor="middle" dominant-baseline="central">All code, new pages, fixes, performance — on brief from PM or Kathryn</text>
+</g>
+
+<line x1="240" y1="416" x2="240" y2="436" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- What gets managed header -->
+<g class="c-gray">
+  <rect x="20" y="436" width="440" height="36" rx="8" stroke-width="0.5"/>
+  <text class="th" x="240" y="459" text-anchor="middle" dominant-baseline="central">What gets managed</text>
+</g>
+
+<line x1="76"  y1="472" x2="76"  y2="492" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="186" y1="472" x2="186" y2="492" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="296" y1="472" x2="296" y2="492" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="406" y1="472" x2="406" y2="492" stroke="#888780" stroke-width="1" marker-end="url(#arrow)"/>
+
+<!-- Website -->
+<g class="node c-gray">
+  <rect x="20" y="492" width="112" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="76" y="515" text-anchor="middle" dominant-baseline="central">Website</text>
+  <text class="ts" x="76" y="533" text-anchor="middle" dominant-baseline="central">Live pages</text>
+</g>
+
+<!-- Templates -->
+<g class="node c-gray">
+  <rect x="130" y="492" width="112" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="186" y="515" text-anchor="middle" dominant-baseline="central">Templates</text>
+  <text class="ts" x="186" y="533" text-anchor="middle" dominant-baseline="central">AI library</text>
+</g>
+
+<!-- BPA App -->
+<g class="node c-gray">
+  <rect x="240" y="492" width="112" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="296" y="515" text-anchor="middle" dominant-baseline="central">BPA app</text>
+  <text class="ts" x="296" y="533" text-anchor="middle" dominant-baseline="central">Phase 3</text>
+</g>
+
+<!-- SEO + reports -->
+<g class="node c-gray">
+  <rect x="350" y="492" width="112" height="56" rx="8" stroke-width="0.5"/>
+  <text class="th" x="406" y="511" text-anchor="middle" dominant-baseline="central">SEO +</text>
+  <text class="th" x="406" y="528" text-anchor="middle" dominant-baseline="central">reports</text>
+  <text class="ts" x="406" y="545" text-anchor="middle" dominant-baseline="central">Monthly</text>
+</g>
+
+<!-- TSH feeds box -->
+<g class="node c-coral">
+  <rect x="540" y="196" width="120" height="200" rx="8" stroke-width="0.5"/>
+  <text class="th" x="600" y="220" text-anchor="middle" dominant-baseline="central">TSH feeds</text>
+  <text class="ts" x="600" y="245" text-anchor="middle" dominant-baseline="central">Shop Local</text>
+  <text class="ts" x="600" y="262" text-anchor="middle" dominant-baseline="central">audience</text>
+  <text class="ts" x="600" y="286" text-anchor="middle" dominant-baseline="central">Social Edit</text>
+  <text class="ts" x="600" y="303" text-anchor="middle" dominant-baseline="central">content</text>
+  <text class="ts" x="600" y="327" text-anchor="middle" dominant-baseline="central">Creative</text>
+  <text class="ts" x="600" y="344" text-anchor="middle" dominant-baseline="central">Network</text>
+  <text class="ts" x="600" y="368" text-anchor="middle" dominant-baseline="central">leads</text>
+</g>
+
+<line x1="540" y1="296" x2="462" y2="296" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 3" marker-end="url(#arrow)"/>
+
+<!-- Calendar prompts header -->
+<g class="c-amber">
+  <rect x="20" y="572" width="440" height="36" rx="8" stroke-width="0.5"/>
+  <text class="th" x="240" y="595" text-anchor="middle" dominant-baseline="central">Calendar prompts — paste into recurring events</text>
+</g>
+
+<!-- Monday weekly -->
+<g class="node">
+  <rect x="20" y="628" width="440" height="56" rx="8" stroke-width="0.5" class="box"/>
+  <text class="th" x="240" y="651" text-anchor="middle" dominant-baseline="central">Monday weekly — 15 min</text>
+  <text class="ts" x="240" y="669" text-anchor="middle" dominant-baseline="central">"Load AGENTS_session.md. Run weekly review. What is the priority this week?"</text>
+</g>
+
+<!-- Month start -->
+<g class="node">
+  <rect x="20" y="700" width="440" height="56" rx="8" stroke-width="0.5" class="box"/>
+  <text class="th" x="240" y="721" text-anchor="middle" dominant-baseline="central">Month start — Researcher — 30 min</text>
+  <text class="ts" x="240" y="739" text-anchor="middle" dominant-baseline="central">"Run Researcher protocol. SEO audit, competitor check, content gaps. Report findings."</text>
+</g>
+
+<!-- Month end -->
+<g class="node">
+  <rect x="20" y="772" width="440" height="36" rx="8" stroke-width="0.5" class="box"/>
+  <text class="th" x="240" y="786" text-anchor="middle" dominant-baseline="central">Month end — review + approve — 20 min</text>
+  <text class="ts" x="240" y="801" text-anchor="middle" dominant-baseline="central">"Load monthly reports. Review metrics. Approve priorities. Update AGENTS."</text>
+</g>
+
+</svg>
+</body>
+</html>
