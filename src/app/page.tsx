@@ -118,8 +118,8 @@ export default function Home() {
             </div>
             {/* Floating stat */}
             <div className="absolute -left-8 top-10 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
-              <p className="font-display text-3xl text-white">100%</p>
-              <p className="mt-1 text-xs text-white/60">Client retention</p>
+              <p className="font-display text-3xl text-white">$592K+</p>
+              <p className="mt-1 text-xs text-white/60">Sales generated for clients</p>
             </div>
             <div className="absolute -right-6 bottom-24 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
               <p className="font-display text-3xl text-white">30+</p>
