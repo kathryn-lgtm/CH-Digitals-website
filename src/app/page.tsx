@@ -117,10 +117,11 @@ export default function Home() {
               </div>
             </div>
             {/* Floating stat */}
-            <div className="absolute -left-8 top-10 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
+            <Link href="/work/dermagen" className="absolute -left-8 top-10 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)] transition hover:border-[var(--color-gold)]">
               <p className="font-display text-3xl text-white">$592K+</p>
-              <p className="mt-1 text-xs text-white/60">Sales generated for clients</p>
-            </div>
+              <p className="mt-1 text-xs text-white/60">Generated for 1 client</p>
+              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-gold)]">Read case study →</p>
+            </Link>
             <div className="absolute -right-6 bottom-24 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
               <p className="font-display text-3xl text-white">30+</p>
               <p className="mt-1 text-xs text-white/60">Active clients</p>
