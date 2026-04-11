@@ -103,7 +103,7 @@ export default function Home() {
                 alt="Kathryn Weekley — founder of CH Digitals"
                 width={600}
                 height={700}
-                className="h-[580px] w-full object-cover object-top"
+                className="h-[580px] w-full object-cover object-[center_25%]"
                 priority
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.55)_0%,transparent_50%)]" />
