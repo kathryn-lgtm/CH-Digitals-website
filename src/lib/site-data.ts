@@ -104,11 +104,11 @@ export const clientLogos = [
   { name: "Dusk on the Downs", src: "/images/clients/dusk.png", href: "https://duskonthedowns.com.au"},
   { name: "DMT Ag.", src: "/images/clients/dtmag.png", href: "https://www.dtmag.com.au" },
   { name: "JMAG Industries", src: "/images/clients/jmag.png", href: "https://www.jmagindustries.com.au" },
-  { name: "Vulcan Tilt Haulage", src: "/images/clients/vulcan.jpg", href: "https://www.vulcantilthaulage.com.au" },
+  { name: "Vulcan Tilt Haulage", src: "/images/clients/vulcan.jpg", href: "https://www.vulcantilt.com.au/" },
   { name: "Mini Treasure Kids", src: "/images/clients/mtk.png", href: "https://www.minitreasurekids.com.au" },
   { name: "MNM Designs", src: "/images/clients/mnm.png", href: "https://www.mnmdesigns.com.au" },
-  { name: "M & S Sheds", src: "/images/clients/mssheds.png", href: "https://www.mssheds.com.au" },
-  { name: "The Social Hub Media Group", src: "/images/clients/social-hub.png", href: "https://www.socialhubmediagroup.com.au" },
+  { name: "M & S Sheds", src: "/images/clients/mssheds.png", href: "https://www.msshedsandgarages.com.au/" },
+  { name: "The Social Hub Media Group", src: "/images/clients/social-hub.png", href: "https://tshmediagroup.com.au/" },
 ];
 
 export const services = [
