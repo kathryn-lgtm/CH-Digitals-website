@@ -38,46 +38,18 @@ export default function Home() {
   return (
     <PageShell>
       <section className="relative overflow-hidden bg-[var(--color-black)] px-5 py-20 text-white md:px-8 md:py-28">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.26),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.24),transparent_30%)]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-full bg-[linear-gradient(transparent_0,transparent_95%,rgba(255,255,255,0.04)_95%,rgba(255,255,255,0.04)_100%)] bg-[size:100%_48px] opacity-20" />
-        <div className="relative mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div className="space-y-8">
-            <div className="reveal-up relative hidden h-44 overflow-visible rounded-[28px] border border-white/8 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] lg:block">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_35%,rgba(101,148,154,0.32),transparent_18%),radial-gradient(circle_at_42%_28%,rgba(227,217,180,0.34),transparent_16%),radial-gradient(circle_at_64%_34%,rgba(95,95,93,0.28),transparent_18%)]" />
-              <div className="absolute left-[16%] top-[34%] h-px w-[52%] bg-white/10" />
-              <div className="absolute left-[16%] top-[34%] h-px w-[52%] overflow-hidden">
-                <div className="gold-line-trace h-px w-[26%] bg-[linear-gradient(90deg,rgba(200,169,110,0),rgba(200,169,110,1),rgba(200,169,110,0))]" />
-              </div>
-              <div className="gold-line-dot absolute left-[16%] top-[34%] h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-gold)] shadow-[0_0_18px_rgba(200,169,110,0.95)]" />
-              <div className="absolute left-[14%] top-[22%] h-10 w-10 rounded-full border border-[rgba(101,148,154,0.55)] bg-[rgba(101,148,154,0.18)] shadow-[0_0_40px_rgba(101,148,154,0.18)] animate-[orbFloat_6s_ease-in-out_infinite]" />
-              <div className="absolute left-[38%] top-[16%] h-14 w-14 rounded-full border border-[rgba(227,217,180,0.62)] bg-[rgba(227,217,180,0.18)] shadow-[0_0_48px_rgba(227,217,180,0.18)] animate-[orbFloat_7s_ease-in-out_infinite]" />
-              <div className="absolute left-[63%] top-[20%] h-12 w-12 rounded-full border border-[rgba(95,95,93,0.58)] bg-[rgba(95,95,93,0.18)] shadow-[0_0_44px_rgba(95,95,93,0.18)] animate-[orbFloat_6.5s_ease-in-out_infinite]" />
-              <div className="absolute left-[12%] top-[63%] rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/58">
-                Websites
-              </div>
-              <div className="absolute left-[35%] top-[58%] rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/58">
-                Systems
-              </div>
-              <div className="absolute left-[58%] top-[63%] rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/58">
-                AI Layers
-              </div>
-              <div className="absolute -right-4 -top-16 max-w-[18rem] rounded-2xl border border-white/8 bg-black/72 px-4 py-3 text-right shadow-[0_18px_40px_rgba(0,0,0,0.34)] backdrop-blur-xl">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
-                  Connected infrastructure
-                </p>
-                <p className="mt-1 text-sm leading-6 text-white/72">
-                  Strategy, systems, and automation working as one stack.
-                </p>
-              </div>
-            </div>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.14),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.12),transparent_35%)]" />
+        <div className="relative mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          {/* Left — headline and CTAs */}
+          <div className="space-y-10">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-gold)]">
               {heroContent.eyebrow}
             </p>
-            <div className="space-y-6">
-              <h1 className="reveal-up max-w-4xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
+            <div className="space-y-7">
+              <h1 className="reveal-up max-w-3xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
                 {heroContent.title}
               </h1>
-              <p className="reveal-up reveal-delay-1 max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
+              <p className="reveal-up reveal-delay-1 max-w-xl text-lg leading-9 text-white/70 md:text-xl">
                 {heroContent.body}
               </p>
             </div>
@@ -95,7 +67,7 @@ export default function Home() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   Core services
                 </p>
-                <p className="mt-2 text-sm leading-7 text-white/76">
+                <p className="mt-2 text-sm leading-7 text-white/70">
                   Website, marketing, systems, and support built to work together.
                 </p>
               </Link>
@@ -106,41 +78,52 @@ export default function Home() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   AI services
                 </p>
-                <p className="mt-2 text-sm leading-7 text-white/76">
+                <p className="mt-2 text-sm leading-7 text-white/70">
                   Practical automation and AI systems designed for small business.
                 </p>
               </Link>
               <Link
-                href="/work"
+                href="/work/dermagen"
                 className="rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   Proven results
                 </p>
-                <p className="mt-2 text-sm leading-7 text-white/76">
+                <p className="mt-2 text-sm leading-7 text-white/70">
                   See the DermaGen case study and the kind of system-level work behind it.
                 </p>
               </Link>
             </div>
           </div>
-          <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-              Digital Operating Systems
-            </p>
-            <div className="grid gap-4">
-              {pillars.map((pillar, index) => (
-                <Link
-                  key={pillar.title}
-                  href={pillarLinks[index]?.href ?? "/services"}
-                  className="group rounded-[24px] border border-white/10 bg-black/25 p-5 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-black/32"
-                >
-                  <h2 className="mb-2 text-xl font-semibold text-white">{pillar.title}</h2>
-                  <p className="text-sm leading-7 text-white/68">{pillar.body}</p>
-                  <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
-                    {pillarLinks[index]?.label ?? "Explore"}
-                  </p>
-                </Link>
-              ))}
+          {/* Right — Kathryn photo */}
+          <div className="relative hidden lg:block">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/images/founder/kathryn-about-fresh.jpg"
+                alt="Kathryn Weekley — founder of CH Digitals"
+                width={600}
+                height={700}
+                className="h-[580px] w-full object-cover object-top"
+                priority
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.55)_0%,transparent_50%)]" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                  Kathryn Weekley
+                </p>
+                <p className="mt-1 text-sm leading-6 text-white/80">
+                  Founder · CH Digitals · Central Highlands, Queensland
+                </p>
+              </div>
+            </div>
+            {/* Floating stat */}
+            <div className="absolute -left-8 top-10 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
+              <p className="font-display text-3xl text-white">100%</p>
+              <p className="mt-1 text-xs text-white/60">Client retention</p>
+            </div>
+            <div className="absolute -right-6 bottom-24 rounded-[20px] border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-xl shadow-[0_18px_40px_rgba(0,0,0,0.4)]">
+              <p className="font-display text-3xl text-white">30+</p>
+              <p className="mt-1 text-xs text-white/60">Active clients</p>
             </div>
           </div>
         </div>
@@ -181,7 +164,6 @@ export default function Home() {
                       {stat.label}
                     </p>
                   </div>
-                  <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-gold)] shadow-[0_0_16px_rgba(200,169,110,0.45)]" />
                 </div>
               </Link>
             ))}
@@ -190,7 +172,6 @@ export default function Home() {
       </Section>
 
       <Section
-        eyebrow="How We Work"
         title="A four-phase framework designed to remove guesswork."
         description="Every engagement follows the same process. It is structured to surface what matters, build the right system, and keep it working long after launch."
       >
@@ -213,7 +194,7 @@ export default function Home() {
                     : "bg-[linear-gradient(90deg,rgba(200,169,110,0.9),rgba(101,148,154,0.3))]"
                 }`}
               />
-              <div className="mb-6 flex items-center justify-between">
+              <div className="mb-6">
                 <p
                   className={`text-xs font-semibold uppercase tracking-[0.28em] ${
                     index % 2 === 0 ? "text-[var(--color-meta)]" : "text-[var(--color-gold)]"
@@ -221,11 +202,6 @@ export default function Home() {
                 >
                 0{index + 1}
                 </p>
-                <span
-                  className={`h-2.5 w-2.5 rounded-full ${
-                    index % 2 === 0 ? "bg-[var(--color-gold)]" : "bg-[rgba(200,169,110,0.92)]"
-                  }`}
-                />
               </div>
               <h3
                 className={`mb-4 font-display text-3xl ${
@@ -248,7 +224,6 @@ export default function Home() {
       </Section>
 
       <Section
-        eyebrow="Proof"
         title="Trusted by regional businesses building something real."
         description="The work spans skincare, agriculture, trades, education, media, and service businesses across Queensland and beyond."
         className="bg-[var(--color-cream)]"
@@ -267,7 +242,6 @@ export default function Home() {
                   {featuredCaseStudy.headline}
                 </h3>
               </div>
-              <span className="mt-2 hidden h-3 w-3 shrink-0 rounded-full bg-[var(--color-gold)] shadow-[0_0_22px_rgba(200,169,110,0.5)] md:block" />
             </div>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/74">
               {featuredCaseStudy.story}
@@ -394,7 +368,6 @@ export default function Home() {
       </Section>
 
       <Section
-        eyebrow="Founder"
         title="Built in regional Queensland, with a bias for systems that do real work."
         description="CH Digitals exists because capable businesses should not be held back by weak websites, disconnected tools, or digital work that creates more admin instead of removing it."
       >

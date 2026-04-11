@@ -114,7 +114,6 @@ export default function ServicesPage() {
       </section>
 
       <Section
-        eyebrow="What You Get"
         title="Core services built around systems, not one-off fixes."
         description="Each engagement is designed to reduce manual workload, remove digital clutter, and make the business easier to run."
         className="relative -mt-12 md:-mt-18"
