@@ -5,6 +5,7 @@ export const siteConfig = {
   url: "https://www.chdigitals.com.au",
   bookingUrl: "https://calendar.app.google/Y2U6jpptmevzjUd29",
   gaMeasurementId: "G-XKNMZFM8XX",
+  metaPixelId: "197332876517534",
   contactEmail: "Kathryn@chdigitals.com.au",
   location: "9-13 King Street Emerald Queensland 4720",
 } as const;
