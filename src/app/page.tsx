@@ -176,51 +176,23 @@ export default function Home() {
         title="A four-phase framework designed to remove guesswork."
         description="Every engagement follows the same process. It is structured to surface what matters, build the right system, and keep it working long after launch."
       >
-        <div className="relative">
-          <div className="pointer-events-none absolute left-0 right-0 top-8 hidden h-px bg-[linear-gradient(90deg,rgba(200,169,110,0),rgba(200,169,110,0.5),rgba(200,169,110,0))] lg:block" />
-          <div className="grid gap-6 lg:grid-cols-4">
+        <div className="divide-y divide-[var(--color-line)]">
           {frameworkSteps.map((step, index) => (
             <div
               key={step.name}
-              className={`relative overflow-hidden rounded-[30px] border p-8 shadow-[0_18px_50px_rgba(10,10,10,0.06)] ${
-                index % 2 === 0
-                  ? "border-[rgba(200,169,110,0.36)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,243,239,0.98))]"
-                  : "border-[rgba(31,41,51,0.12)] bg-[linear-gradient(180deg,rgba(31,41,51,0.98),rgba(17,24,29,0.98))]"
-              }`}
+              className="grid gap-6 py-10 first:pt-0 last:pb-0 lg:grid-cols-[120px_1fr_2fr] lg:items-baseline lg:gap-14"
             >
-              <div
-                className={`pointer-events-none absolute inset-x-0 top-0 h-1 ${
-                  index % 2 === 0
-                    ? "bg-[linear-gradient(90deg,rgba(200,169,110,0.82),rgba(200,169,110,0.22))]"
-                    : "bg-[linear-gradient(90deg,rgba(200,169,110,0.9),rgba(101,148,154,0.3))]"
-                }`}
-              />
-              <div className="mb-6">
-                <p
-                  className={`text-xs font-semibold uppercase tracking-[0.28em] ${
-                    index % 2 === 0 ? "text-[var(--color-meta)]" : "text-[var(--color-gold)]"
-                  }`}
-                >
+              <p className="font-display text-6xl leading-none text-[rgba(10,10,10,0.1)] lg:text-8xl">
                 0{index + 1}
-                </p>
-              </div>
-              <h3
-                className={`mb-4 font-display text-3xl ${
-                  index % 2 === 0 ? "text-[var(--color-black)]" : "text-white"
-                }`}
-              >
+              </p>
+              <h3 className="font-display text-3xl leading-tight text-[var(--color-black)] lg:text-4xl">
                 {step.name}
               </h3>
-              <p
-                className={`text-base leading-8 ${
-                  index % 2 === 0 ? "text-[var(--color-copy)]" : "text-white/74"
-                }`}
-              >
+              <p className="text-lg leading-9 text-[var(--color-copy)]">
                 {step.body}
               </p>
             </div>
           ))}
-          </div>
         </div>
       </Section>
 

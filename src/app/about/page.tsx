@@ -69,83 +69,42 @@ export default function AboutPage() {
       </section>
 
       <Section
-        eyebrow="What We Stand For"
         title="A few things we believe."
         description="The business is not interested in overpromising. The point is to build infrastructure that makes the operation stronger, clearer, and easier to run."
         className="bg-[var(--color-cream)]"
       >
-        <div className="relative">
-          <div className="pointer-events-none absolute left-[6%] right-[6%] top-9 hidden h-px bg-[linear-gradient(90deg,rgba(200,169,110,0),rgba(200,169,110,0.45),rgba(200,169,110,0))] lg:block" />
-          <div className="grid gap-6 md:grid-cols-2">
+        <div className="divide-y divide-[rgba(10,10,10,0.08)]">
           {values.map((value, index) => (
             <article
               key={value.title}
-              className={`relative overflow-hidden rounded-[30px] border p-8 shadow-[0_16px_40px_rgba(10,10,10,0.05)] ${
-                index % 2 === 0
-                  ? "border-[rgba(200,169,110,0.28)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,243,239,0.98))]"
-                  : "border-[rgba(10,10,10,0.08)] bg-white"
-              }`}
+              className="grid gap-4 py-10 first:pt-0 last:pb-0 lg:grid-cols-[1fr_2fr] lg:gap-16 lg:items-baseline"
             >
-              <div
-                className={`pointer-events-none absolute inset-x-0 top-0 h-1 ${
-                  index % 2 === 0
-                    ? "bg-[linear-gradient(90deg,rgba(200,169,110,0.78),rgba(200,169,110,0.18))]"
-                    : "bg-[linear-gradient(90deg,rgba(31,41,51,0.18),rgba(200,169,110,0.4))]"
-                }`}
-              />
-              <div className="mb-5 flex items-center justify-between gap-4">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-meta)]">
-                  Principle 0{index + 1}
-                </span>
-                <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-gold)] shadow-[0_0_14px_rgba(200,169,110,0.38)]" />
-              </div>
-              <h2 className="max-w-[16ch] font-display text-3xl leading-tight text-[var(--color-black)]">
+              <h2 className="font-display text-2xl leading-tight text-[var(--color-black)] lg:text-3xl">
                 {value.title}
               </h2>
-              <p className="mt-4 text-base leading-8 text-[var(--color-copy)]">{value.body}</p>
+              <p className="text-lg leading-9 text-[var(--color-copy)]">{value.body}</p>
             </article>
           ))}
-          </div>
         </div>
       </Section>
 
-      <Section
-        eyebrow="Credentials"
-        title="Certified in the tools we use."
-        description="Kept understated on purpose. The work should carry the weight, but the credibility is there."
-      >
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {credentials.map((item, index) => (
-            <div
-              key={item}
-              className={`relative overflow-hidden rounded-[26px] border p-6 shadow-[0_16px_40px_rgba(10,10,10,0.05)] ${
-                index % 2 === 0
-                  ? "border-[rgba(200,169,110,0.3)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,243,239,0.98))]"
-                  : "border-[rgba(10,10,10,0.08)] bg-white"
-              }`}
-            >
-              <div
-                className={`pointer-events-none absolute inset-x-0 top-0 h-1 ${
-                  index % 2 === 0
-                    ? "bg-[linear-gradient(90deg,rgba(200,169,110,0.82),rgba(200,169,110,0.2))]"
-                    : "bg-[linear-gradient(90deg,rgba(31,41,51,0.18),rgba(200,169,110,0.42))]"
-                }`}
-              />
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-meta)]">
-                    Credential 0{index + 1}
-                  </p>
-                  <p className="mt-4 font-display text-2xl leading-tight text-[var(--color-black)]">
-                    {item}
-                  </p>
-                </div>
-                <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-gold)] shadow-[0_0_14px_rgba(200,169,110,0.4)]" />
-              </div>
-            </div>
-          ))}
+      <section className="px-5 py-16 md:px-8 md:py-20">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
+            Certified in the tools we use
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {credentials.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-[rgba(200,169,110,0.34)] bg-[var(--color-cream)] px-5 py-2.5 text-sm font-semibold text-[var(--color-black)]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-6 rounded-[32px] border border-white/10 bg-white/5 p-8 md:flex-row md:items-center md:justify-between md:p-12">
