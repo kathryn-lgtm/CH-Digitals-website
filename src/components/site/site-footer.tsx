@@ -51,6 +51,12 @@ export function SiteFooter() {
               >
                 Book a Strategy Session
               </Link>
+              <Link
+                href="/privacy"
+                className="block transition hover:text-[var(--color-black)]"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
