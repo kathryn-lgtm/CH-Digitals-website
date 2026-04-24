@@ -59,7 +59,7 @@ export default function Home() {
                 See Our Work
               </ButtonLink>
             </div>
-            <div className="grid gap-3 pt-2 sm:grid-cols-3">
+            <div className="grid gap-3 pt-2 sm:grid-cols-2 lg:grid-cols-4">
               <Link
                 href="/services"
                 className="rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
@@ -91,6 +91,17 @@ export default function Home() {
                 </p>
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   See the DermaGen case study and the kind of system-level work behind it.
+                </p>
+              </Link>
+              <Link
+                href="/bce"
+                className="rounded-[22px] border border-[rgba(200,169,110,0.45)] bg-[rgba(200,169,110,0.06)] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-[rgba(200,169,110,0.1)]"
+              >
+                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                  BCE — early access
+                </p>
+                <p className="mt-2 text-sm leading-7 text-white/70">
+                  The Business Clarity Engine. Join the waitlist before launch.
                 </p>
               </Link>
             </div>
