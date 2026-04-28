@@ -4,6 +4,7 @@ export const siteConfig = {
     "CH Digitals builds websites, digital operating systems, and AI-powered automation for regional businesses ready to grow without chaos.",
   url: "https://www.chdigitals.com.au",
   bookingUrl: "https://calendar.app.google/Y2U6jpptmevzjUd29",
+  googleReviewUrl: "https://g.page/r/CeyhXZokAvhtEAE/review",
   gaMeasurementId: "G-XKNMZFM8XX",
   metaPixelId: "197332876517534",
   contactEmail: "Kathryn@chdigitals.com.au",
