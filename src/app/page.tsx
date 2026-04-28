@@ -9,7 +9,6 @@ import {
   clientLogos,
   frameworkSteps,
   heroContent,
-  pillars,
   positioning,
   siteConfig,
   stats,
@@ -26,13 +25,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const pillarLinks = [
-    { href: "/services", label: "Explore website systems" },
-    { href: "/services", label: "See systems services" },
-    { href: "/services", label: "View marketing support" },
-    { href: "/ai-services", label: "See AI services" },
-  ];
-
   const featuredCaseStudy = caseStudies[0];
 
   return (
@@ -53,16 +45,19 @@ export default function Home() {
                 {heroContent.body}
               </p>
             </div>
-            <div className="reveal-up reveal-delay-2 flex flex-col gap-4 sm:flex-row">
+            <div className="reveal-up reveal-delay-2 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <ButtonLink href={siteConfig.bookingUrl}>Book a Strategy Session</ButtonLink>
-              <ButtonLink href="/work" variant="secondary" className="border-white/30 text-white">
+              <ButtonLink href="/services#pricing" variant="secondary-dark">
+                See Pricing
+              </ButtonLink>
+              <ButtonLink href="/work" variant="secondary-dark">
                 See Our Work
               </ButtonLink>
             </div>
             <div className="grid gap-3 pt-2 sm:grid-cols-2 lg:grid-cols-4">
               <Link
                 href="/services"
-                className="rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
+                className="group rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   Core services
@@ -70,10 +65,13 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   Website, marketing, systems, and support built to work together.
                 </p>
+                <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 transition group-hover:text-[var(--color-gold)]">
+                  Explore services →
+                </p>
               </Link>
               <Link
                 href="/ai-services"
-                className="rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
+                className="group rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   AI services
@@ -81,10 +79,13 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   Practical automation and AI systems designed for small business.
                 </p>
+                <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 transition group-hover:text-[var(--color-gold)]">
+                  See AI services →
+                </p>
               </Link>
               <Link
                 href="/work/dermagen"
-                className="rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
+                className="group rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-white/[0.06]"
               >
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
                   Proven results
@@ -92,16 +93,31 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   See the DermaGen case study and the kind of system-level work behind it.
                 </p>
+                <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 transition group-hover:text-[var(--color-gold)]">
+                  Read the case study →
+                </p>
               </Link>
               <Link
                 href="/bce"
-                className="rounded-[22px] border border-[rgba(200,169,110,0.45)] bg-[rgba(200,169,110,0.06)] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[var(--color-gold)] hover:bg-[rgba(200,169,110,0.1)]"
+                className="group flex flex-col rounded-[22px] border border-[rgba(200,188,138,0.45)] bg-[rgba(200,188,138,0.06)] px-4 py-4 transition hover:-translate-y-0.5 hover:border-[#c8bc8a] hover:bg-[rgba(200,188,138,0.1)]"
               >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
-                  BCE — early access
-                </p>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/images/bce/bce-inverted.svg"
+                    alt="BCE mark"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8"
+                  />
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#c8bc8a]">
+                    BCE — early access
+                  </p>
+                </div>
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   The Business Clarity Engine. Join the waitlist before launch.
+                </p>
+                <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 transition group-hover:text-[#c8bc8a]">
+                  Join the waitlist →
                 </p>
               </Link>
             </div>
@@ -452,12 +468,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
             <ButtonLink href={siteConfig.bookingUrl}>Book a Strategy Session</ButtonLink>
-            <Link
-              href="/services"
-              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white transition hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]"
-            >
-              Explore services
-            </Link>
+            <ButtonLink href="/services#pricing" variant="secondary-dark">
+              See Pricing
+            </ButtonLink>
           </div>
         </div>
       </section>

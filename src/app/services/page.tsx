@@ -4,7 +4,18 @@ import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { ButtonLink } from "@/components/site/button-link";
 import { ScrollReveal } from "@/components/site/scroll-reveal";
-import { services, siteConfig } from "@/lib/site-data";
+import {
+  pricingCategories,
+  pricingTerms,
+  retainerTiers,
+  services,
+  siteConfig,
+  testimonials,
+} from "@/lib/site-data";
+
+function fmtAUD(n: number): string {
+  return n.toLocaleString("en-AU", { style: "currency", currency: "AUD", maximumFractionDigits: 0 });
+}
 
 export const metadata: Metadata = {
   title: "Services",
@@ -171,8 +182,8 @@ export default function ServicesPage() {
 
       <Section
         eyebrow="How We Engage"
-        title="No locked-in packages. Scope built around your business."
-        description="Every engagement starts with a conversation about what is actually holding the business back — not a menu of services to pick from."
+        title="Transparent ranges. Scope built around your business."
+        description="Every engagement starts with a conversation about what is actually holding the business back. Pricing below is published openly so you can self-qualify before we talk."
         className="bg-[var(--color-cream)]"
       >
         <div className="grid gap-6 lg:grid-cols-3">
@@ -227,14 +238,9 @@ export default function ServicesPage() {
                 {item.body}
               </p>
               {item.cta && item.href ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--color-gold)] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-black)] transition hover:opacity-90"
-                >
-                  {item.cta}
-                </a>
+                <div className="mt-8">
+                  <ButtonLink href={item.href}>{item.cta}</ButtonLink>
+                </div>
               ) : null}
             </div>
           ))}
@@ -253,6 +259,153 @@ export default function ServicesPage() {
               <ButtonLink href={siteConfig.bookingUrl}>Book a Strategy Session</ButtonLink>
             </div>
           </div>
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="Pricing"
+        title="Transparent ranges. Tailored quotes."
+        description="Every engagement is custom-scoped, but here's what most clients invest. Final pricing is confirmed in writing after your free strategy session."
+        className="bg-white"
+      >
+        <div id="pricing" className="scroll-mt-24" />
+        <div className="space-y-6">
+          {pricingCategories.map((cat) => (
+            <article
+              key={cat.key}
+              className="rounded-[28px] border border-[rgba(10,10,10,0.08)] bg-white p-7 shadow-[0_14px_40px_rgba(10,10,10,0.05)] md:p-9"
+            >
+              <div className="grid gap-6 lg:grid-cols-[0.45fr_1.55fr] lg:items-start">
+                <div>
+                  <h3 className="font-display text-2xl leading-tight text-[var(--color-black)] md:text-3xl">
+                    {cat.title}
+                  </h3>
+                  <p className="mt-3 max-w-[22rem] text-sm leading-7 text-[var(--color-copy)]">
+                    {cat.summary}
+                  </p>
+                </div>
+                <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                  {cat.tiers.map((tier) => (
+                    <div
+                      key={tier.label}
+                      className="rounded-[20px] border border-[rgba(200,169,110,0.28)] bg-[var(--color-cream)]/70 p-5"
+                    >
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-meta)]">
+                        {tier.label}
+                      </p>
+                      <p className="mt-2 font-display text-3xl text-[var(--color-black)]">
+                        from {fmtAUD(tier.from)}
+                      </p>
+                      <p className="mt-3 text-xs leading-6 text-[var(--color-copy)]">
+                        {tier.scope}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+
+          <article className="rounded-[28px] border border-[rgba(200,169,110,0.4)] bg-[linear-gradient(180deg,rgba(10,10,10,0.98),rgba(31,41,51,0.98))] p-7 text-white shadow-[0_24px_60px_rgba(10,10,10,0.14)] md:p-9">
+            <div className="grid gap-6 lg:grid-cols-[0.45fr_1.55fr] lg:items-start">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
+                  Ongoing Partnership
+                </p>
+                <h3 className="mt-3 font-display text-2xl leading-tight md:text-3xl">
+                  Monthly retainers
+                </h3>
+                <p className="mt-3 max-w-[22rem] text-sm leading-7 text-white/72">
+                  Stay close after launch. Hosting, updates, content, strategy — at the cadence the business actually needs.
+                </p>
+              </div>
+              <div className="grid gap-3 md:grid-cols-3">
+                {retainerTiers.map((tier) => (
+                  <div
+                    key={tier.label}
+                    className="rounded-[20px] border border-white/12 bg-white/[0.05] p-5"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                      {tier.label}
+                    </p>
+                    <p className="mt-2 font-display text-3xl text-white">
+                      from {fmtAUD(tier.monthlyFrom)}
+                      <span className="ml-1 text-sm font-normal text-white/60">/ month</span>
+                    </p>
+                    <p className="mt-3 text-xs leading-6 text-white/70">{tier.scope}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          <article className="rounded-[28px] border border-[rgba(10,10,10,0.08)] bg-[var(--color-cream)] p-7 md:p-9">
+            <div className="grid gap-6 lg:grid-cols-[0.45fr_1.55fr] lg:items-start">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
+                  How it works
+                </p>
+                <h3 className="mt-3 font-display text-2xl leading-tight text-[var(--color-black)] md:text-3xl">
+                  What to expect on price
+                </h3>
+              </div>
+              <div className="grid gap-3 text-sm leading-7 text-[var(--color-copy)] md:grid-cols-2">
+                <div className="rounded-[18px] border border-[var(--color-line)] bg-white px-4 py-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                    Free first step
+                  </p>
+                  <p className="mt-2">{pricingTerms.freeStrategySession}</p>
+                </div>
+                <div className="rounded-[18px] border border-[var(--color-line)] bg-white px-4 py-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                    Payment terms
+                  </p>
+                  <p className="mt-2">{pricingTerms.paymentSplit} {pricingTerms.gstNote}</p>
+                </div>
+                <div className="rounded-[18px] border border-[var(--color-line)] bg-white px-4 py-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                    Bundle savings
+                  </p>
+                  <ul className="mt-2 space-y-1">
+                    {pricingTerms.bundleDiscounts.map((d) => (
+                      <li key={d}>· {d}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-[18px] border border-[var(--color-line)] bg-white px-4 py-4">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
+                    TSH members
+                  </p>
+                  <p className="mt-2">{pricingTerms.tshMemberDiscounts}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="What clients say"
+        title="Built on retention, not pitches."
+        description="Most CH Digitals clients stay long-term because the work keeps producing returns."
+      >
+        <div className="grid gap-5 md:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <article
+              key={`${testimonial.author}-${index}`}
+              className="rounded-[28px] border border-[rgba(10,10,10,0.08)] bg-white p-7 shadow-[0_18px_45px_rgba(10,10,10,0.05)]"
+            >
+              <p className="text-base leading-8 text-[var(--color-copy)]">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <div className="mt-8 border-t border-[var(--color-line)] pt-5">
+                <p className="font-semibold text-[var(--color-black)]">{testimonial.author}</p>
+                {testimonial.company ? (
+                  <p className="mt-1 text-sm text-[var(--color-meta)]">{testimonial.company}</p>
+                ) : null}
+              </div>
+            </article>
+          ))}
         </div>
       </Section>
 

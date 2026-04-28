@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { BceWaitlistForm } from "@/components/site/bce-waitlist-form";
 import { PageShell } from "@/components/site/page-shell";
 
@@ -38,10 +39,20 @@ export default function BcePage() {
       <section className="relative overflow-hidden bg-[var(--color-black)] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.14),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.12),transparent_35%)]" />
         <div className="relative mx-auto max-w-[1200px]">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-gold)]">
-            BCE · Early access opening in 2026
-          </p>
-          <h1 className="reveal-up mt-5 max-w-4xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/images/bce/bce-inverted.svg"
+              alt="Business Clarity Engine"
+              width={64}
+              height={64}
+              className="h-14 w-14 md:h-16 md:w-16"
+              priority
+            />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c8bc8a]">
+              BCE · Early access opening in 2026
+            </p>
+          </div>
+          <h1 className="reveal-up mt-7 max-w-4xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
             Most business owners aren&apos;t lacking ideas. They&apos;re lacking clarity.
           </h1>
           <p className="reveal-up reveal-delay-1 mt-8 max-w-3xl text-lg leading-9 text-white/70 md:text-xl">
