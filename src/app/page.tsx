@@ -47,9 +47,6 @@ export default function Home() {
             </div>
             <div className="reveal-up reveal-delay-2 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <ButtonLink href={siteConfig.bookingUrl}>Book a Strategy Session</ButtonLink>
-              <ButtonLink href="/services#pricing" variant="secondary-dark">
-                See Pricing
-              </ButtonLink>
               <ButtonLink href="/work" variant="secondary-dark">
                 See Our Work
               </ButtonLink>
@@ -468,9 +465,6 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
             <ButtonLink href={siteConfig.bookingUrl}>Book a Strategy Session</ButtonLink>
-            <ButtonLink href="/services#pricing" variant="secondary-dark">
-              See Pricing
-            </ButtonLink>
           </div>
         </div>
       </section>
