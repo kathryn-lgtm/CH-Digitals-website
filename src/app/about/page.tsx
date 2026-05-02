@@ -64,6 +64,25 @@ export default function AboutPage() {
                 className="h-full w-full object-cover object-[50%_34%]"
               />
             </div>
+            {/* TYPOGRAPHY FALLBACK — AI-portrait swap path (target 2026-05-09).
+                Real-photo path: drop new file into /public/images/founder/, keep <Image> above, delete this block.
+                AI-portrait removed before real photo lands: comment out the <Image> div above, uncomment this block. */}
+            {/*
+            <div className="flex h-[500px] flex-col justify-between overflow-hidden rounded-[32px] border border-[rgba(200,169,110,0.34)] bg-[var(--color-cream)] p-10 shadow-[0_25px_80px_rgba(10,10,10,0.08)] md:h-[560px] md:p-12 lg:h-[600px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
+                Founder
+              </p>
+              <p className="font-display text-4xl leading-tight text-[var(--color-black)] md:text-5xl">
+                Built in regional Queensland. Built for businesses that mean something.
+              </p>
+              <div className="space-y-1">
+                <p className="font-display text-2xl text-[var(--color-black)]">Kathryn Weekley</p>
+                <p className="text-sm leading-6 text-[var(--color-copy)]">
+                  Founder · CH Digitals · Central Highlands, Queensland
+                </p>
+              </div>
+            </div>
+            */}
           </div>
         </div>
       </section>

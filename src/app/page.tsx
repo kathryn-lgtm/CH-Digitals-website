@@ -379,6 +379,26 @@ export default function Home() {
                 className="h-full w-full object-cover object-[48%_42%]"
               />
             </div>
+            {/* TYPOGRAPHY FALLBACK — AI-portrait swap path (target 2026-05-09).
+                Real-photo path: drop new file into /public/images/founder/, keep <Image> above, delete this block.
+                AI-portrait removed before real photo lands: comment out the <Image> div above, uncomment this block.
+                Stats grid below stays as-is. */}
+            {/*
+            <div className="relative flex h-[520px] flex-col justify-between overflow-hidden rounded-[32px] border border-[rgba(200,169,110,0.28)] bg-[var(--color-cream)] p-10 shadow-[0_30px_80px_rgba(10,10,10,0.08)] md:h-[580px] md:p-12 lg:h-[640px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
+                Hi, I&apos;m Kathryn.
+              </p>
+              <p className="font-display text-4xl leading-tight text-[var(--color-black)] md:text-5xl">
+                Clear language. Better systems. Less wasted effort.
+              </p>
+              <div className="space-y-1">
+                <p className="font-display text-2xl text-[var(--color-black)]">Kathryn Weekley</p>
+                <p className="text-sm leading-6 text-[var(--color-copy)]">
+                  Founder · CH Digitals · Central Highlands, Queensland
+                </p>
+              </div>
+            </div>
+            */}
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <div className="rounded-[22px] border border-[var(--color-line)] bg-[var(--color-cream)] px-4 py-4">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--color-meta)]">
