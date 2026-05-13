@@ -4,6 +4,8 @@ import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
+import { JsonLd } from "@/components/seo/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -25,6 +27,13 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     type: "website",
     url: siteConfig.url,
+    siteName: "CH Digitals",
+    locale: "en_AU",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CH Digitals",
+    description: siteConfig.description,
   },
 };
 
@@ -36,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[var(--color-off-white)] text-[var(--color-black)]">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gaMeasurementId}`}
