@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/site/contact-form";
 import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -16,6 +17,12 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">

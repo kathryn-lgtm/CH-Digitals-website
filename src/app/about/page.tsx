@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { ButtonLink } from "@/components/site/button-link";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { credentials, siteConfig, values } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about" },
+        ]}
+      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
@@ -74,7 +81,7 @@ export default function AboutPage() {
         className="bg-[var(--color-cream)]"
       >
         <div className="divide-y divide-[rgba(10,10,10,0.08)]">
-          {values.map((value, index) => (
+          {values.map((value) => (
             <article
               key={value.title}
               className="grid gap-4 py-10 first:pt-0 last:pb-0 lg:grid-cols-[1fr_2fr] lg:gap-16 lg:items-baseline"

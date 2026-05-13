@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/site/page-shell";
 import { ButtonLink } from "@/components/site/button-link";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -15,6 +16,12 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Blog", href: "/blog" },
+        ]}
+      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[900px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { caseStudies, siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -19,6 +20,12 @@ export default function WorkPage() {
 
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Work", href: "/work" },
+        ]}
+      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">

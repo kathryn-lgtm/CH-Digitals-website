@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { JsonLd } from "@/components/seo/json-ld";
+import { articleSchema } from "@/lib/schema";
 import { caseStudies, siteConfig } from "@/lib/site-data";
 
 const caseStudy = caseStudies.find((cs) => cs.slug === "dermagen")!;
@@ -19,6 +22,21 @@ export const metadata: Metadata = {
 export default function DermaGenCaseStudy() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Work", href: "/work" },
+          { name: "DermaGen", href: "/work/dermagen" },
+        ]}
+      />
+      <JsonLd
+        data={articleSchema({
+          headline: caseStudy.headline,
+          description:
+            "Case study — CH Digitals rebuilt DermaGen on Shopify with email, SEO, and ongoing partnership, taking online revenue from ~$500/month to $30K/month and $592K+ across three years.",
+          path: "/work/dermagen",
+        })}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-[var(--color-black)] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.18),transparent_30%)]" />

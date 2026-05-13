@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/site/page-shell";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -84,6 +85,12 @@ To exercise any of these rights, or to request deletion of your data, please con
 export default function PrivacyPage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Privacy Policy", href: "/privacy" },
+        ]}
+      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[1200px]">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">

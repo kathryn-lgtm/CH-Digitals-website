@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { TypewriterHeading } from "@/components/site/typewriter-heading";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { aiBuildSteps, aiServices, siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -18,6 +19,12 @@ export const metadata: Metadata = {
 export default function AiServicesPage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "AI Services", href: "/ai-services" },
+        ]}
+      />
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-6">

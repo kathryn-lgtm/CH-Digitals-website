@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { BceWaitlistForm } from "@/components/site/bce-waitlist-form";
 import { PageShell } from "@/components/site/page-shell";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Business Clarity Engine — Early Access",
@@ -36,6 +37,12 @@ const whoFor = [
 export default function BcePage() {
   return (
     <PageShell>
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Business Clarity Engine", href: "/bce" },
+        ]}
+      />
       <section className="relative overflow-hidden bg-[var(--color-black)] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.14),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.12),transparent_35%)]" />
         <div className="relative mx-auto max-w-[1200px]">
