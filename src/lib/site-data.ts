@@ -265,10 +265,57 @@ export const credentials = [
   "Marketing with Purpose Certified",
 ];
 
-export const caseStudies = [
+export type CaseStudyMetric = { value: string; label: string };
+
+export type CaseStudyDetailCard = {
+  eyebrow: string;
+  title: string;
+  body: string;
+};
+
+export type CaseStudyRelatedLink = {
+  href: string;
+  eyebrow: string;
+  body: string;
+  title: string;
+};
+
+export type CaseStudy = {
+  slug: string;
+  client: string;
+  /** Short display name for breadcrumbs and "Visit X" buttons. Defaults to `client`. */
+  shortName?: string;
+  industry: string;
+  website: string;
+  headline: string;
+  /** Single-paragraph summary, used on the /work index page. */
+  story: string;
+  metrics: CaseStudyMetric[];
+  services: string[];
+  /** SEO metadata for the case-study page. Falls back to derived values if absent. */
+  meta?: {
+    title: string;
+    description: string;
+  };
+  /** Article JSON-LD description. Falls back to `story` if absent. */
+  schema?: {
+    description: string;
+  };
+  /** Story rendered as paragraphs in The Challenge section. Falls back to `[story]`. */
+  storyParagraphs?: string[];
+  /** Boxed callout text under the story. Section hides if absent. */
+  resultCallout?: string;
+  /** Detail cards in The Work section (Platform/Email/Ongoing pattern). */
+  detailCards?: CaseStudyDetailCard[];
+  /** Related-content cards above the bottom CTA. Section hides if absent. */
+  relatedLinks?: CaseStudyRelatedLink[];
+};
+
+export const caseStudies: CaseStudy[] = [
   {
     slug: "dermagen",
     client: "DermaGen by Botanical Chemist",
+    shortName: "DermaGen",
     industry: "Natural, botanical & compounded skincare",
     website: "https://dermagen.net.au",
     headline:
@@ -291,6 +338,59 @@ export const caseStudies = [
       "Marketing strategy",
       "Social media",
       "Ongoing support & partnership",
+    ],
+    meta: {
+      title: "DermaGen Case Study — $592K+ in Sales",
+      description:
+        "How CH Digitals rebuilt DermaGen's digital presence from a non-converting website into a national skincare brand generating $592K+ in sales, 313K+ sessions, and a 54.2% checkout conversion rate.",
+    },
+    schema: {
+      description:
+        "Case study — CH Digitals rebuilt DermaGen on Shopify with email, SEO, and ongoing partnership, taking online revenue from ~$500/month to $30K/month and $592K+ across three years.",
+    },
+    storyParagraphs: [
+      "DermaGen by Botanical Chemist came to CH Digitals with a strong product range and genuine clinical expertise. What they did not have was a digital presence that communicated any of it — or a store that actually converted.",
+      "The website was not performing. The email marketing was minimal. There was no real SEO strategy. Revenue from the online store was roughly $500 per month — well below what the product quality and existing customer loyalty should have been producing.",
+      "The brief was clear: rebuild the digital infrastructure so it actually matched the depth of the offer, and build systems underneath it that could scale.",
+    ],
+    resultCallout:
+      "Within six months of the Shopify rebuild, DermaGen went from ~$500/month to $30,000/month in online revenue. Over three years, the system generated $592K+ in total sales.",
+    detailCards: [
+      {
+        eyebrow: "Platform",
+        title: "Shopify",
+        body: "The store was rebuilt on Shopify with custom design, proper product architecture, and clean collection structure — built to convert and built to scale.",
+      },
+      {
+        eyebrow: "Email",
+        title: "Klaviyo",
+        body: "Email marketing via Klaviyo built the subscriber base to 10,000+ in two years — with flows for welcome, post-purchase, browse abandonment, and re-engagement.",
+      },
+      {
+        eyebrow: "Ongoing",
+        title: "Partnership",
+        body: "CH Digitals stayed close — monthly performance reviews, SEO refinement, content updates, and strategic guidance as DermaGen grew nationally.",
+      },
+    ],
+    relatedLinks: [
+      {
+        href: "/services",
+        eyebrow: "Service stack",
+        body: "The full service stack used on engagements like this.",
+        title: "Explore services",
+      },
+      {
+        href: "/ai-services",
+        eyebrow: "AI",
+        body: "Custom AI and automation for small business.",
+        title: "See AI services",
+      },
+      {
+        href: "/about",
+        eyebrow: "Studio",
+        body: "Meet Kathryn and how CH Digitals works.",
+        title: "About CH Digitals",
+      },
     ],
   },
 ];
