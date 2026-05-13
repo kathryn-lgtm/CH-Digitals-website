@@ -7,8 +7,10 @@ type SitemapEntry = {
   priority: number;
 };
 
-// Explicit list of every indexable route. /review is intentionally
-// excluded — it is a client-only link and is marked noindex.
+// Explicit list of every indexable route.
+//   /blog   excluded — noindex until content lands
+//           (re-index trigger: 5+ articles in any cluster)
+//   /review excluded — private client link, noindex
 const routes: SitemapEntry[] = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/services", changeFrequency: "monthly", priority: 0.9 },
@@ -18,7 +20,6 @@ const routes: SitemapEntry[] = [
   { path: "/about", changeFrequency: "monthly", priority: 0.7 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/bce", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/blog", changeFrequency: "monthly", priority: 0.5 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.2 },
 ];
 

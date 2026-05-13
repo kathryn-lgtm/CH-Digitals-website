@@ -23,16 +23,18 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <PageShell>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-        ]}
-      />
       <section className="relative overflow-hidden bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.16),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(31,41,51,0.1),transparent_28%)]" />
         <div className="relative mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div className="space-y-6 reveal-up">
+            <Breadcrumbs
+              visible
+              tone="light"
+              items={[
+                { name: "Home", href: "/" },
+                { name: "Services", href: "/services" },
+              ]}
+            />
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
               Services
             </p>

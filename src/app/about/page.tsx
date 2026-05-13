@@ -18,14 +18,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageShell>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "About", href: "/about" },
-        ]}
-      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[1200px]">
+          <Breadcrumbs
+            visible
+            tone="light"
+            className="mb-6"
+            items={[
+              { name: "Home", href: "/" },
+              { name: "About", href: "/about" },
+            ]}
+          />
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
             About Kathryn
           </p>

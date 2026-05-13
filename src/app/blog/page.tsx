@@ -11,19 +11,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog",
   },
+  // Noindex until content lands. Re-index trigger: 5+ articles in any cluster.
+  robots: { index: false, follow: true },
 };
 
 export default function BlogPage() {
   return (
     <PageShell>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Blog", href: "/blog" },
-        ]}
-      />
       <section className="bg-[var(--color-cream)] px-5 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[900px] text-center">
+          <Breadcrumbs
+            visible
+            tone="light"
+            className="mb-6 flex justify-center"
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Blog", href: "/blog" },
+            ]}
+          />
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-meta)]">
             Insights
           </p>

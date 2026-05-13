@@ -22,13 +22,6 @@ export const metadata: Metadata = {
 export default function DermaGenCaseStudy() {
   return (
     <PageShell>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "Work", href: "/work" },
-          { name: "DermaGen", href: "/work/dermagen" },
-        ]}
-      />
       <JsonLd
         data={articleSchema({
           headline: caseStudy.headline,
@@ -41,19 +34,17 @@ export default function DermaGenCaseStudy() {
       <section className="relative overflow-hidden bg-[var(--color-black)] px-5 py-20 text-white md:px-8 md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,169,110,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(58,119,134,0.18),transparent_30%)]" />
         <div className="relative mx-auto max-w-[1200px]">
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="/work"
-              className="text-xs font-semibold uppercase tracking-[0.28em] text-white/40 transition hover:text-white/70"
-            >
-              Work
-            </Link>
-            <span className="text-white/20">›</span>
-            <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-              DermaGen
-            </span>
-          </div>
-          <h1 className="mt-8 max-w-4xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
+          <Breadcrumbs
+            visible
+            tone="dark"
+            className="mb-6"
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Work", href: "/work" },
+              { name: "DermaGen", href: "/work/dermagen" },
+            ]}
+          />
+          <h1 className="mt-2 max-w-4xl font-display text-5xl leading-none tracking-[-0.03em] md:text-7xl">
             {caseStudy.headline}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">

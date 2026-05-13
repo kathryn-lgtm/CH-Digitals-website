@@ -19,15 +19,17 @@ export const metadata: Metadata = {
 export default function AiServicesPage() {
   return (
     <PageShell>
-      <Breadcrumbs
-        items={[
-          { name: "Home", href: "/" },
-          { name: "AI Services", href: "/ai-services" },
-        ]}
-      />
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-6">
+            <Breadcrumbs
+              visible
+              tone="dark"
+              items={[
+                { name: "Home", href: "/" },
+                { name: "AI Services", href: "/ai-services" },
+              ]}
+            />
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
               CH Digitals · AI Services
             </p>

@@ -8,12 +8,10 @@ const orgId = `${siteConfig.url}/#organization`;
 // that needs a publisher/provider references this @id so search engines
 // see a single CH Digitals entity, not competing copies.
 //
-// Some fields are intentionally left out until Kathryn confirms them:
-//   - telephone (open question 5 in the work order)
-//   - sameAs social profiles (need confirmed URLs)
-//   - areaServed boundary (open question 4)
-// See seo/drafts/schema-content/DRAFT-organization-fields.md for the
-// proposed values once those decisions land.
+// Decisions locked 2026-05-14 (decisions-back-to-code brief):
+//   - telephone: deliberately omitted
+//   - areaServed: Country = Australia (regional positioning stays in copy)
+//   - sameAs: pending Kathryn-supplied Facebook + Instagram URLs
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -30,6 +28,10 @@ export function organizationSchema() {
       addressRegion: "QLD",
       postalCode: "4720",
       addressCountry: "AU",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Australia",
     },
     founder: {
       "@type": "Person",
