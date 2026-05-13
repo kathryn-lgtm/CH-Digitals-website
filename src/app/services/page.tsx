@@ -5,6 +5,7 @@ import { Section } from "@/components/site/section";
 import { ButtonLink } from "@/components/site/button-link";
 import { ScrollReveal } from "@/components/site/scroll-reveal";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import {
   services,
   siteConfig,
@@ -288,6 +289,31 @@ export default function ServicesPage() {
           ))}
         </div>
       </Section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Explore further"
+        items={[
+          {
+            href: "/ai-services",
+            eyebrow: "AI",
+            body: "Custom AI agents, lead follow-up, and automation for small business.",
+            title: "See AI services",
+          },
+          {
+            href: "/work/dermagen",
+            eyebrow: "Proof",
+            body: "DermaGen Shopify rebuild — $592K+ in sales over three years.",
+            title: "Read the case study",
+          },
+          {
+            href: "/about",
+            eyebrow: "Studio",
+            body: "Built in regional Queensland by Kathryn Weekley.",
+            title: "About CH Digitals",
+          },
+        ]}
+      />
 
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-6 rounded-[32px] border border-white/10 bg-white/5 p-8 md:flex-row md:items-center md:justify-between md:p-12">

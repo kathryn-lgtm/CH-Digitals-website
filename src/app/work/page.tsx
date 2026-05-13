@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import { caseStudies, siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -102,6 +103,31 @@ export default function WorkPage() {
           ))}
         </div>
       </Section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Explore further"
+        items={[
+          {
+            href: "/services",
+            eyebrow: "Service stack",
+            body: "The full service stack behind every case study.",
+            title: "Explore services",
+          },
+          {
+            href: "/ai-services",
+            eyebrow: "AI",
+            body: "AI agents and automation for small business.",
+            title: "See AI services",
+          },
+          {
+            href: "/about",
+            eyebrow: "Studio",
+            body: "Built in regional Queensland by Kathryn Weekley.",
+            title: "About CH Digitals",
+          },
+        ]}
+      />
 
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-8 rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-8 md:flex-row md:items-end md:justify-between md:p-12">

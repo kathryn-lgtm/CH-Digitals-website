@@ -4,6 +4,7 @@ import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import { JsonLd } from "@/components/seo/json-ld";
 import { articleSchema } from "@/lib/schema";
 import { caseStudies, siteConfig } from "@/lib/site-data";
@@ -159,6 +160,31 @@ export default function DermaGenCaseStudy() {
           </div>
         </div>
       </Section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Explore further"
+        items={[
+          {
+            href: "/services",
+            eyebrow: "Service stack",
+            body: "The full service stack used on engagements like this.",
+            title: "Explore services",
+          },
+          {
+            href: "/ai-services",
+            eyebrow: "AI",
+            body: "Custom AI and automation for small business.",
+            title: "See AI services",
+          },
+          {
+            href: "/about",
+            eyebrow: "Studio",
+            body: "Meet Kathryn and how CH Digitals works.",
+            title: "About CH Digitals",
+          },
+        ]}
+      />
 
       {/* CTA */}
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">

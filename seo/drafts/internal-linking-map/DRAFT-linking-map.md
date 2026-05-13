@@ -1,21 +1,56 @@
-DRAFT — not approved. Strategic call — Kathryn approves before any wiring.
+DRAFT — not approved. Strategic call — Kathryn approves before any further wiring beyond what landed in commit `<P3>`.
 
-# Internal linking map proposal
+# Internal linking map proposal (updated 2026-05-14)
 
 **Principle:** every page is at most 2 clicks from the homepage. Pillar page (`/digital-systems-regional-businesses`, once it exists) anchors the cluster.
 
-## Current state (Phase 1a)
+## Status of original linking map proposals
 
-- Header: Home, Services, AI Services, Work, About, Contact (6 links)
-- Footer: same 6 + Privacy + booking + email
-- Homepage body: links to /services, /ai-services, /work/dermagen, /bce, /about, /contact — good spread
-- /services body: links out to nothing structured (just the booking CTA on each card)
-- /work/dermagen body: links to /work (breadcrumb) and external Dermagen site
-- /bce body: links to nothing in-site
+| Proposal | Status |
+|---|---|
+| 1. `Related services` block at the bottom of each main page — linking to 2-3 service sub-pages | **Partially implemented as `<RelatedLinks>`** wiring on 7 pages. Targets are existing routes for now; will swap to sub-services when Phase 2 routes ship. |
+| 2. `Also from CH Digitals` block at the bottom of each case study — links to other case studies | **Blocked.** Only one case study exists (DermaGen). Phase 3 dependency. |
+| 3. Footer: third column listing top 4 sub-services | **Blocked.** Sub-services don't exist yet. Phase 2 dependency. |
 
-**Issue:** sub-page bodies don't cross-link enough. Every CTA defaults to "book a strategy session." That's commercially correct, but SEO-weak because internal-link signal is shallow.
+## What was wired (Phase 1a interim)
 
-## Proposed cluster
+New `<RelatedLinks>` component (`src/components/site/related-links.tsx`) added with light/dark tone variants. Placed as a section between the last content section and the bottom CTA on every main page. Each page now cross-links to 3 other in-site routes.
+
+### Per-page wiring
+
+| Page | Tone | Links to |
+|---|---|---|
+| `/about` | light | `/services`, `/work`, `/ai-services` |
+| `/services` | light | `/ai-services`, `/work/dermagen`, `/about` |
+| `/ai-services` | dark | `/services`, `/work`, `/bce` |
+| `/work` | light | `/services`, `/ai-services`, `/about` |
+| `/work/dermagen` | dark | `/services`, `/ai-services`, `/about` |
+| `/contact` | light | `/services`, `/work`, `/about` |
+| `/bce` | light | `/ai-services`, `/work`, `/about` |
+
+### Skipped
+
+| Page | Reason |
+|---|---|
+| `/` Home | Already has 4 link cards in hero + many in-body links. Adding more would dilute. |
+| `/blog` | Noindex placeholder. |
+| `/privacy` | Pure legal copy. No SEO value. |
+
+## Eyebrow/body/title content
+
+Each card pulls language from the linked page's existing metadata description, trimmed to fit. Aria may want to refine voice on these in Phase 1b — they're functional, not voice-led. Specifically:
+
+- Eyebrow: short category label ("Service stack", "AI", "Proof", "Studio", "BCE")
+- Body: one-sentence factual summary of the target page
+- Title: action-led (e.g. "Explore services", "See AI services", "About CH Digitals")
+
+If Aria wants different voice, the text lives in each page file as plain `items` prop on `<RelatedLinks>` — swap in place, no component edit needed.
+
+## Anchor text rule
+
+Avoid `click here`, `read more`, `learn more`. Use the target page's primary keyword/intent as the link text. Card titles already follow this pattern.
+
+## Future cluster (when Phase 2/3 land)
 
 ```
 Home
@@ -29,23 +64,12 @@ Home
 ├── AI Services (hub)
 │   ├── AI Automation Small Business
 │   └── Small Business Automation QLD
-├── Work
-│   └── DermaGen
+├── Work → DermaGen + (CH Tools, Birth Teacher, Vulcan Tilt, Emerald Golf, Social Hub when they ship)
 ├── About
 ├── Contact
 ├── Blog
 ├── BCE
-└── Digital Systems for Regional Business (pillar; links back to home)
+└── Digital Systems for Regional Business (pillar)
 ```
 
-## Phase 1b wiring (no copy decisions — just structural)
-
-1. Add a `Related services` block at the bottom of each main page that links to 2-3 service sub-pages.
-2. Add an `Also from CH Digitals` block at the bottom of each case study linking to other case studies (when more land in Phase 3).
-3. Footer: add a third column for `Top services` listing the 4 highest-priority sub-pages once they exist.
-
-**These are structural — they don't need voice approval, but Kathryn approves the *which-links-where* decision.**
-
-## Anchor text rule
-
-Avoid `click here`, `read more`, `learn more` as bare anchors. Use the target page's primary keyword as the link text. Aria + Kathryn lane.
+When Phase 2 sub-services land, swap the `<RelatedLinks>` `items` on /services and /ai-services to point at the new sub-pages instead of cross-hub links.

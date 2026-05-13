@@ -5,6 +5,7 @@ import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { TypewriterHeading } from "@/components/site/typewriter-heading";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import { aiBuildSteps, aiServices, siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -229,6 +230,31 @@ export default function AiServicesPage() {
           </div>
         </div>
       </Section>
+
+      <RelatedLinks
+        tone="dark"
+        heading="Explore further"
+        items={[
+          {
+            href: "/services",
+            eyebrow: "Service stack",
+            body: "Web, systems, marketing, e-commerce, and ongoing partnership.",
+            title: "Explore services",
+          },
+          {
+            href: "/work",
+            eyebrow: "Proof",
+            body: "Case studies behind the systems we build.",
+            title: "See the work",
+          },
+          {
+            href: "/bce",
+            eyebrow: "BCE",
+            body: "The Business Clarity Engine — early-access AI system for founders.",
+            title: "Join the waitlist",
+          },
+        ]}
+      />
     </PageShell>
   );
 }

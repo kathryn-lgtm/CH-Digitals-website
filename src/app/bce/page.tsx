@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BceWaitlistForm } from "@/components/site/bce-waitlist-form";
 import { PageShell } from "@/components/site/page-shell";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 
 export const metadata: Metadata = {
   title: "Business Clarity Engine — Early Access",
@@ -144,6 +145,31 @@ export default function BcePage() {
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Explore further"
+        items={[
+          {
+            href: "/ai-services",
+            eyebrow: "AI",
+            body: "More on the AI and automation work that sits alongside BCE.",
+            title: "See AI services",
+          },
+          {
+            href: "/work",
+            eyebrow: "Proof",
+            body: "Real businesses, real systems, real outcomes.",
+            title: "See the work",
+          },
+          {
+            href: "/about",
+            eyebrow: "Studio",
+            body: "Built by Kathryn at CH Digitals.",
+            title: "About CH Digitals",
+          },
+        ]}
+      />
     </PageShell>
   );
 }

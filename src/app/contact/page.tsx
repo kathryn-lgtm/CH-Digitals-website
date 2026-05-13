@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/site/contact-form";
 import { ButtonLink } from "@/components/site/button-link";
 import { PageShell } from "@/components/site/page-shell";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import { siteConfig } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -61,6 +62,32 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Before you book"
+        description="If you want to read more first, the most relevant places are below."
+        items={[
+          {
+            href: "/services",
+            eyebrow: "Service stack",
+            body: "The full service stack so you can scope the conversation.",
+            title: "Explore services",
+          },
+          {
+            href: "/work",
+            eyebrow: "Proof",
+            body: "Case studies including the DermaGen rebuild.",
+            title: "See the work",
+          },
+          {
+            href: "/about",
+            eyebrow: "Studio",
+            body: "Background on Kathryn and CH Digitals.",
+            title: "About CH Digitals",
+          },
+        ]}
+      />
     </PageShell>
   );
 }

@@ -4,6 +4,7 @@ import { PageShell } from "@/components/site/page-shell";
 import { Section } from "@/components/site/section";
 import { ButtonLink } from "@/components/site/button-link";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { RelatedLinks } from "@/components/site/related-links";
 import { credentials, siteConfig, values } from "@/lib/site-data";
 
 export const metadata: Metadata = {
@@ -115,6 +116,31 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <RelatedLinks
+        tone="light"
+        heading="Explore further"
+        items={[
+          {
+            href: "/services",
+            eyebrow: "Service stack",
+            body: "Website, marketing, systems, e-commerce, and ongoing partnership.",
+            title: "Explore services",
+          },
+          {
+            href: "/work",
+            eyebrow: "Proof",
+            body: "Case studies including the DermaGen rebuild — $592K+ in sales.",
+            title: "See the work",
+          },
+          {
+            href: "/ai-services",
+            eyebrow: "AI",
+            body: "Custom AI agents, lead follow-up, and automation for small business.",
+            title: "See AI services",
+          },
+        ]}
+      />
 
       <section className="bg-[var(--color-black)] px-5 py-16 text-white md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-6 rounded-[32px] border border-white/10 bg-white/5 p-8 md:flex-row md:items-center md:justify-between md:p-12">
