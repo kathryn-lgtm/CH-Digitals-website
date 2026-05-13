@@ -13,6 +13,9 @@ type WindowWithTracking = Window & {
   gtag?: (...args: unknown[]) => void;
 };
 
+const inputClassName =
+  "min-h-12 rounded-xl border border-[var(--color-line)] bg-[var(--color-cream)] px-4 outline-none transition focus:border-[var(--color-navy)] focus-visible:ring-2 focus-visible:ring-[var(--color-gold)]/40";
+
 function readUtmFromLocation() {
   if (typeof window === "undefined") return {};
   const params = new URLSearchParams(window.location.search);
@@ -114,7 +117,7 @@ export function BceWaitlistForm() {
             name="name"
             type="text"
             autoComplete="name"
-            className="min-h-12 rounded-xl border border-[var(--color-line)] bg-[var(--color-cream)] px-4 outline-none transition focus:border-[var(--color-navy)]"
+            className={inputClassName}
           />
         </label>
         <label className="grid gap-2 text-sm font-medium text-[var(--color-copy)]">
@@ -124,7 +127,7 @@ export function BceWaitlistForm() {
             name="email"
             type="email"
             autoComplete="email"
-            className="min-h-12 rounded-xl border border-[var(--color-line)] bg-[var(--color-cream)] px-4 outline-none transition focus:border-[var(--color-navy)]"
+            className={inputClassName}
           />
         </label>
       </div>
@@ -134,13 +137,13 @@ export function BceWaitlistForm() {
           name="businessName"
           type="text"
           autoComplete="organization"
-          className="min-h-12 rounded-xl border border-[var(--color-line)] bg-[var(--color-cream)] px-4 outline-none transition focus:border-[var(--color-navy)]"
+          className={inputClassName}
         />
       </label>
       <button
         type="submit"
         disabled={state.status === "loading" || state.status === "success"}
-        className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--color-gold)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-black)] transition hover:-translate-y-0.5 hover:bg-[#d6ba86] disabled:cursor-not-allowed disabled:opacity-70"
+        className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--color-gold)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-black)] transition hover:-translate-y-0.5 hover:bg-[#d6ba86] disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2"
       >
         {state.status === "loading"
           ? "Saving..."
@@ -148,13 +151,19 @@ export function BceWaitlistForm() {
             ? "You're on the list"
             : "Join the waitlist"}
       </button>
-      {state.status !== "idle" ? (
-        <p
-          className={`text-sm ${state.status === "success" ? "text-[var(--color-navy)]" : state.status === "error" ? "text-[#aa4c4c]" : "text-[var(--color-meta)]"}`}
-        >
-          {state.message}
-        </p>
-      ) : null}
+      <p
+        role="status"
+        aria-live="polite"
+        className={`min-h-[1.5rem] text-sm ${
+          state.status === "success"
+            ? "text-[var(--color-navy)]"
+            : state.status === "error"
+              ? "text-[#aa4c4c]"
+              : "text-[var(--color-meta)]"
+        }`}
+      >
+        {state.status !== "idle" ? state.message : ""}
+      </p>
     </form>
   );
 }

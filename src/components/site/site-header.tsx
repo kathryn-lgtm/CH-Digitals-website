@@ -15,14 +15,14 @@ export function SiteHeader() {
         <Link href="/" className="shrink-0" aria-label="CH Digitals home">
           <Image
             src="/images/brand/logo-transparent.png"
-              alt="CH Digitals logo"
+            alt=""
             width={420}
             height={75}
             priority
             className="h-auto w-[170px] md:w-[230px]"
           />
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -41,11 +41,12 @@ export function SiteHeader() {
         <button
           type="button"
           aria-expanded={open}
-          aria-label="Toggle menu"
+          aria-controls="mobile-menu"
+          aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((current) => !current)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 text-[var(--color-off-white)] md:hidden"
         >
-          <span className="space-y-1.5">
+          <span aria-hidden="true" className="space-y-1.5">
             <span className="block h-0.5 w-5 bg-current" />
             <span className="block h-0.5 w-5 bg-current" />
             <span className="block h-0.5 w-5 bg-current" />
@@ -53,8 +54,11 @@ export function SiteHeader() {
         </button>
       </div>
       {open ? (
-        <div className="border-t border-white/10 bg-[var(--color-black)] px-5 py-6 md:hidden">
-          <div className="mx-auto flex max-w-[1200px] flex-col gap-4">
+        <div
+          id="mobile-menu"
+          className="border-t border-white/10 bg-[var(--color-black)] px-5 py-6 md:hidden"
+        >
+          <nav aria-label="Mobile" className="mx-auto flex max-w-[1200px] flex-col gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -68,7 +72,7 @@ export function SiteHeader() {
             <ButtonLink href={siteConfig.bookingUrl} className="mt-3">
               Book a Strategy Session
             </ButtonLink>
-          </div>
+          </nav>
         </div>
       ) : null}
     </header>
