@@ -5,6 +5,7 @@ import "@fontsource-variable/fraunces";
 import "@fontsource-variable/jetbrains-mono";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-data";
+import { StructuredData } from "@/components/site/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[var(--color-off-white)] text-[var(--color-black)]">
+        <StructuredData />
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.gaMeasurementId}`}
